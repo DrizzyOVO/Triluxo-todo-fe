@@ -12,12 +12,14 @@ import { auth } from "./firebase";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { userState } from "@/store/atoms/user";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null); 
   const setTheUser = useSetRecoilState(userState); 
+  const navigate = useRouter(); 
 
   const googleSignIn = async () => { 
     const provider = new GoogleAuthProvider();
