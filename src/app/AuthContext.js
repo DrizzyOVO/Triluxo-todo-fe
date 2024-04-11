@@ -11,7 +11,7 @@ import {
 import { auth } from "./firebase";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { userState } from "@/store/atoms/user";
-import { axios } from "axios";
+import axios from "axios";
 
 const AuthContext = createContext();
 
